@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, html{
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  padding-top: 2em;
+}
+
+.slider {
+  position: relative;
+  height: 600px;
+  max-width: 1066px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider > img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 2s;
+  object-fit: cover;
+}
+
+.visible {
+  opacity: 1 !important;
+  color : rgb(205, 4, 250);
+}
+
+.next,
+.prev {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.next:hover,
+.prev:hover {
+  background-color: rgb(255, 145, 0);
+}
+
+.next {
+  right: 0;
+}
+
+.indicator {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 5px;
+  z-index: 1;
+  width: 100%;
+}
+
+.indicator > div {
+  width: 15px;
+  height: 15px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 100px;
+  transition: background-color 1s;
+  cursor: pointer;
+}
+
+.indicator > div:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.position{
+  background-color: rgba(0, 229, 255, 0.8) !important;
+}
+
+.indicator > div + div {
+  margin-left: 0.5em;
+}
